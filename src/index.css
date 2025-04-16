@@ -1,2 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+
+.container {
+  width: 80%;
+  margin: auto;
+}
