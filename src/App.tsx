@@ -1,5 +1,6 @@
 import "./App.css";
 import MainBtn from "./components/atoms/Buttoms";
+import EmphasisSection from "./components/molecules/EmphasisSection";
 import InfoSection from "./components/molecules/InfoSection";
 import Hero from "./components/templates/Hero";
 import { Button } from "./components/ui/button";
@@ -25,6 +26,8 @@ function App() {
         image="../../../public/02.png"
         direction="ltr"
       />
+
+      <EmphasisSection />
     </>
   );
 }
