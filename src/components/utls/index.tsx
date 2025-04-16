@@ -1,8 +1,11 @@
 export const navLinks = [
-  { label: "Who We Are", href: "#" },
-  { label: "Divisions", href: "#" },
-  { label: "Our Companies", href: "#" },
-  { label: "Projects", href: "#" },
-  { label: "Shop", href: "#" },
-  { label: "Contact Us", href: "#" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/About" },
+  { label: "team", href: "/About/team" },
+  { label: "Who We Are", href: "/whoWeAre" },
+  { label: "Divisions", href: "/Divisions" },
+  { label: "Our Companies", href: "/OurCompanies" },
+  { label: "Projects", href: "/Projects" },
+  // { label: "Shop", href: "/Shop" },
+  // { label: "Contact Us", href: "/contactUs" },
 ];

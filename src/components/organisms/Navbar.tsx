@@ -2,12 +2,13 @@
 
 // import { SheetDemo } from "../molecule/SheetDemo";
 // import MainBtn from "../atoms/Buttoms";
+import { Link } from "react-router-dom";
 import MobileButtom from "../atoms/MobileButtom";
 import { navLinks } from "../utls";
 
 export default function Navbar() {
   return (
-    <header className="fixed top-12 w-full">
+    <header className="fixed top-12 bg-red-500 z-10 w-full">
       <div className="container flex items-center">
         <a href="#" className="block ">
           <img src="/logo.svg" alt="Logo" />
@@ -17,12 +18,12 @@ export default function Navbar() {
             <ul className="flex items-center gap-6 text-sm">
               {navLinks.map(({ label, href }) => (
                 <li key={label}>
-                  <a
-                    href={href}
+                  <Link
+                    to={href}
                     className="text-white transition hover:text-blue-300 pl-5"
                   >
                     {label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
