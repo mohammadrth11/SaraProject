@@ -1,4 +1,4 @@
-import { children, ReactNode } from "react";
+import { ReactNode } from "react";
 
 type BtnProps = {
   title: string;
@@ -17,7 +17,7 @@ function MainBtn({ title, link, color, children }: BtnProps) {
       href={link}
       className={`${
         color === "red" ? redStyles : defaultStyles
-      }  ${baseStyles}`}
+      }  ${baseStyles} text-center`}
     >
       {children || title}
     </a>

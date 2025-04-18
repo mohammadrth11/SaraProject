@@ -3,7 +3,7 @@ import MainBtn from "../atoms/Buttoms";
 
 export default function Header() {
   return (
-    <div className="container h-screen flex justify-between  items-center flex-col md:flex-row gap-x-10   pt-44 md:pt-0 ">
+    <header className="container h-screen flex justify-between  items-center flex-col md:flex-row gap-x-10   pt-33 md:pt-0">
       <div className="header-content text-white">
         <h1 className="text-4xl font-boldstext-4xl pb-5">Sara Electrical</h1>
         <p>Now Automation is Available for B2B and B2C</p>
@@ -19,7 +19,7 @@ export default function Header() {
           className=" w-90 md:w-full  max-w-md"
         />
       </div>
-    </div>
+    </header>
   );
 }
 // test

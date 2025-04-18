@@ -8,7 +8,7 @@ import { navLinks } from "../utls";
 
 export default function Navbar() {
   return (
-    <header className="fixed top-12 bg-red-500 z-10 w-full">
+    <header className="absolute top-12  z-10 w-full">
       <div className="container flex items-center">
         <a href="#" className="block ">
           <img src="/logo.svg" alt="Logo" />
@@ -20,7 +20,7 @@ export default function Navbar() {
                 <li key={label}>
                   <Link
                     to={href}
-                    className="text-white transition hover:text-blue-300 pl-5"
+                    className="text-white transition hover:text-blue-400 pl-5"
                   >
                     {label}
                   </Link>
@@ -30,9 +30,9 @@ export default function Navbar() {
           </nav>
 
           <div className="gap-4">
-            <div className="sm:flex sm:gap-4">
+            <div className="sm:flex sm:gap-4 hidden md:block">
               <ul className="flex items-center gap-6 text-sm">
-                <li className="text-white transition hover:text-blue-300 cursor-pointer">
+                <li className="text-white transition hover:text-blue-300 cursor-pointer ">
                   Login
                 </li>
                 <li className="cursor-pointer">

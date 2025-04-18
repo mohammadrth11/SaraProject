@@ -1,17 +1,20 @@
 import React from "react";
 
-export default function Emphasis() {
+type EmphasisProps = {
+  src: string;
+  title: string;
+  description: string;
+};
+
+export default function Emphasis({ src, title, description }: EmphasisProps) {
   return (
-    <div className="Emphasi flex items-center justify-start gap-x-5 pb-5">
+    <div className="Emphasi flex items-center justify-start gap-x-5 pb-5 ">
       <div className="image">
-        <img src="../../../public/Rectangle 854 (1).svg" alt="Emphasi-image" />
+        <img src={src} alt="Emphasi-image" className="w-40 h-25" />
       </div>
-      <div className="content">
-        <h2 className="font-bold">Quality</h2>
-        <p>
-          Add multiple feature items, set different icons or images for each
-          feature and also give custom links if needed.
-        </p>
+      <div className="content ">
+        <h2 className="font-bold">{title}</h2>
+        <p>{description}</p>
       </div>
     </div>
   );
