@@ -1,5 +1,5 @@
 import { EmphasisInfo } from "@/api/emphasisData";
-import Emphasis from "../molecules/Emphasis";
+import Emphasis from "../molecules/EmphasisBox";
 
 export default function EmphasisSection() {
   return (

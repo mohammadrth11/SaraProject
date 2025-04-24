@@ -1,4 +1,3 @@
-import React from "react";
 import MainBtn from "../atoms/Buttoms";
 
 export default function Header() {

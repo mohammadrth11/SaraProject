@@ -1,5 +1,5 @@
 import { SolutionsData } from "@/api/SolutionsData";
-import Solutions from "../molecules/Solutions";
+import Solutions from "../molecules/SolutionsCircular";
 
 export default function OurProductSection() {
   return (

@@ -1,5 +1,3 @@
-import React from "react";
-
 type EmphasisProps = {
   src: string;
   title: string;

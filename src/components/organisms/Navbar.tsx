@@ -4,7 +4,8 @@
 // import MainBtn from "../atoms/Buttoms";
 import { Link } from "react-router-dom";
 import MobileButtom from "../atoms/MobileButtom";
-import { navLinks } from "../utls";
+import { navLinks } from "../../api/NavbarData";
+import LoginDrower from "../molecules/LoginDrower";
 
 export default function Navbar() {
   return (
@@ -33,7 +34,7 @@ export default function Navbar() {
             <div className="sm:flex sm:gap-4 hidden md:block">
               <ul className="flex items-center gap-6 text-sm">
                 <li className="text-white transition hover:text-blue-300 cursor-pointer ">
-                  Login
+                  <LoginDrower />
                 </li>
                 <li className="cursor-pointer">
                   <img src="../../../public/cartIcon (2).svg" alt="" />

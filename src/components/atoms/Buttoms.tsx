@@ -17,7 +17,7 @@ function MainBtn({ title, link, color, children }: BtnProps) {
       href={link}
       className={`${
         color === "red" ? redStyles : defaultStyles
-      }  ${baseStyles} text-center`}
+      }  ${baseStyles} text-center hover:transition duration-200`}
     >
       {children || title}
     </a>
