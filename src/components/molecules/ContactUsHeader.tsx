@@ -1,3 +1,5 @@
+import { socialMediaIconsData } from "@/api/social-media-icons";
+
 export default function ContactUsHeader() {
   return (
     <div className="ContactUsHeader  py-20 bg-[url('/Vector.jpg')] bg-cover bg-center relative  w-full flex ">
@@ -15,30 +17,11 @@ export default function ContactUsHeader() {
           <a href="">Headquarters</a>
         </div>
         <div className="social-media flex flex-row items-center justify-center gap-5 bg-[#191970] w-70 h-25">
-          <a href="#">
-            <img
-              src="../../../public/social-media-1.svg"
-              alt="social-media-pic"
-            />
-          </a>
-          <a href="#">
-            <img
-              src="../../../public/social-media-2.svg"
-              alt="social-media-pic"
-            />
-          </a>
-          <a href="#">
-            <img
-              src="../../../public/social-media-3.svg"
-              alt="social-media-pic"
-            />
-          </a>
-          <a href="#">
-            <img
-              src="../../../public/social-media-4.svg"
-              alt="social-media-pic"
-            />
-          </a>
+          {socialMediaIconsData?.map((ele) => (
+            <a href={ele.src}>
+              <img src={ele.image} alt={ele.alt} />
+            </a>
+          ))}
         </div>
       </div>
     </div>

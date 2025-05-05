@@ -2,75 +2,83 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
-import MainBtn from "../atoms/Buttoms";
+import { useRef } from "react";
+import emailjs from "emailjs-com";
+import { toast } from "react-toastify";
+
+const firstRowFields = [
+  { id: "firstName", name: "firstName", label: "First Name", type: "text" },
+  { id: "lastName", name: "lastName", label: "Last Name", type: "text" },
+  { id: "email", name: "email", label: "Email", type: "email" },
+];
+
+const secondRowFields = [
+  { id: "phone", name: "phone", label: "Phone", type: "tel" },
+  { id: "inquiry", name: "inquiry", label: "Inquiry Type", type: "text" },
+  {
+    id: "hear",
+    name: "hear",
+    label: "How Did You Hear About Us?",
+    type: "text",
+  },
+];
 
 export default function ContactUsForm() {
+  const form = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!form.current) return;
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(() => {
+        toast.success("Message sent successfully!");
+        form.current?.reset();
+      })
+      .catch(() => {
+        toast.error("Something went wrong. Please try again.");
+      });
+  };
+
   return (
-    <form className="grid gap-y-5 pb-15">
+    <form ref={form} onSubmit={sendEmail} className="grid gap-y-5 pb-15">
       <div className="first-row grid grid-cols-1 md:grid-cols-3 gap-5">
-        <div>
-          <Label htmlFor="firstName" className="pb-3 text-gray-700">
-            First Name
-          </Label>
-          <Input
-            id="firstName"
-            type="text"
-            className="rounded-none border-gray-500"
-          />
-        </div>
-        <div>
-          <Label htmlFor="lastName" className="pb-3 text-gray-700">
-            Last Name
-          </Label>
-          <Input
-            id="lastName"
-            type="text"
-            className="rounded-none border-gray-500"
-          />
-        </div>
-        <div>
-          <Label htmlFor="email" className="pb-3 text-gray-700">
-            Email
-          </Label>
-          <Input
-            id="email"
-            type="email"
-            className="rounded-none border-gray-500"
-          />
-        </div>
+        {firstRowFields.map((field) => (
+          <div key={field.id}>
+            <Label htmlFor={field.id} className="pb-3 text-gray-700">
+              {field.label}
+            </Label>
+            <Input
+              id={field.id}
+              name={field.name}
+              type={field.type}
+              className="rounded-none border-gray-500"
+            />
+          </div>
+        ))}
       </div>
 
       <div className="second-row grid grid-cols-1 md:grid-cols-3 gap-5">
-        <div>
-          <Label htmlFor="phone" className="pb-3 text-gray-700">
-            Phone
-          </Label>
-          <Input
-            id="phone"
-            type="tel"
-            className="rounded-none border-gray-500"
-          />
-        </div>
-        <div>
-          <Label htmlFor="inquiry" className="pb-3 text-gray-700">
-            Inquiry Type
-          </Label>
-          <Input
-            id="inquiry"
-            type="text"
-            className="rounded-none border-gray-500"
-          />
-        </div>
-        <div>
-          <Label htmlFor="hear" className="pb-3 text-gray-700">
-            How Did You Hear About Us?
-          </Label>
-          <Input
-            id="hear"
-            type="text"
-            className="rounded-none border-gray-500"
-          />
-        </div>
+        {secondRowFields.map((field) => (
+          <div key={field.id}>
+            <Label htmlFor={field.id} className="pb-3 text-gray-700">
+              {field.label}
+            </Label>
+            <Input
+              id={field.id}
+              name={field.name}
+              type={field.type}
+              className="rounded-none border-gray-500"
+            />
+          </div>
+        ))}
       </div>
 
       <div className="message">
@@ -79,6 +87,7 @@ export default function ContactUsForm() {
         </Label>
         <Textarea
           id="message"
+          name="message"
           rows={5}
           className="rounded-none border-gray-500"
         />
@@ -98,8 +107,13 @@ export default function ContactUsForm() {
         </Label>
       </div>
 
-      <div className="send-message flex justify-end">
-        <MainBtn title="Send Your Message" link="#" color="red" />
+      <div className="flex justify-end">
+        <button
+          type="submit"
+          className="bg-red-600 cursor-pointer hover:bg-red-700 text-white py-2 px-6 "
+        >
+          Send Your Message
+        </button>
       </div>
     </form>
   );

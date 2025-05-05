@@ -1,10 +1,18 @@
 import { ProjectData } from "@/api/ProjecrData";
+import { categoriesData } from "@/api/ProjectsCategoriesData";
 import DynamicHeader from "@/components/molecules/DynamicHeader";
 import Project from "@/components/molecules/Project";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 // import Project from "@/components/molecules/project";
 
 export default function Projects() {
+  const [activeCategory, setactiveCategory] = useState("All");
+
+  const filteredProjects =
+    activeCategory == "All"
+      ? ProjectData
+      : ProjectData.filter((ele) => ele.category === activeCategory);
   return (
     <>
       <DynamicHeader
@@ -19,40 +27,21 @@ export default function Projects() {
           have
         </p>
         <ul className="projectsList container flex flex-wrap justify-between gap-y-5">
-          <li>
-            <a href="#" className=" hover:text-blue-900 transition duration-10">
-              Trading
-            </a>
-          </li>
-          <li>
-            <a href="#" className=" hover:text-blue-900 transition duration-10">
-              Switchgear{" "}
-            </a>
-          </li>
-          <li>
-            <a href="#" className=" hover:text-blue-900 transition duration-10">
-              Building Automation
-            </a>
-          </li>
-          <li>
-            <a href="#" className=" hover:text-blue-900 transition duration-10">
-              Industry Automation
-            </a>
-          </li>
-          <li>
-            <a href="#" className=" hover:text-blue-900 transition duration-10">
-              Energy
-            </a>
-          </li>
-          <li>
-            <a href="#" className=" hover:text-blue-900 transition duration-10">
-              Software
-            </a>
-          </li>
+          {categoriesData?.map((ele) => (
+            <li>
+              <a
+                href={ele.src}
+                className=" hover:text-blue-900 transition duration-10"
+                onClick={() => setactiveCategory(ele.title)}
+              >
+                {ele.title}
+              </a>
+            </li>
+          ))}
         </ul>
 
         <div className="projectsList flex items-center justify-between flex-wrap gap-y-15 py-10">
-          {ProjectData?.map((ele) => (
+          {filteredProjects?.map((ele) => (
             <Link to={`/Projects/${ele.id}`}>
               <Project src={ele.src} title={ele.title} />
             </Link>

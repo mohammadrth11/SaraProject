@@ -6,7 +6,10 @@ type EmphasisProps = {
 
 export default function Emphasis({ src, title, description }: EmphasisProps) {
   return (
-    <div className="Emphasi flex items-center justify-start gap-x-5 pb-5 ">
+    <div
+      data-aos="fade-left"
+      className="Emphasi flex items-center justify-start gap-x-5 pb-5 "
+    >
       <div className="image">
         <img src={src} alt="Emphasi-image" className="w-40 h-25" />
       </div>

@@ -9,9 +9,19 @@ import Projects from "./pages/Projects";
 import Shop from "./pages/Shop";
 import Home from "./pages/WhoWeAre";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import { ToastContainer } from "react-toastify";
+
 function App() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
     <>
+      <ToastContainer />
       <BrowserRouter>
         <Layout>
           <Routes>

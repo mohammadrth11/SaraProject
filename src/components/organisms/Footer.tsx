@@ -1,4 +1,5 @@
 import { footerLinks } from "@/api/footerData";
+import { socialMediaIconsData } from "@/api/social-media-icons";
 
 export default function Footer() {
   return (
@@ -33,30 +34,11 @@ export default function Footer() {
       <div className="footer-second container flex flex-col md:flex-row items-center justify-between gap-y-5 py-10">
         <p>All rights reserved Sara Electrical © 2024</p>
         <div className="social-media flex flex-row items-center justify-between gap-5">
-          <a href="#">
-            <img
-              src="../../../public/social-media-1.svg"
-              alt="social-media-pic"
-            />
-          </a>
-          <a href="#">
-            <img
-              src="../../../public/social-media-2.svg"
-              alt="social-media-pic"
-            />
-          </a>
-          <a href="#">
-            <img
-              src="../../../public/social-media-3.svg"
-              alt="social-media-pic"
-            />
-          </a>
-          <a href="#">
-            <img
-              src="../../../public/social-media-4.svg"
-              alt="social-media-pic"
-            />
-          </a>
+          {socialMediaIconsData?.map((ele) => (
+            <a href={ele.src}>
+              <img src={ele.image} alt={ele.alt} />
+            </a>
+          ))}
         </div>
       </div>
     </footer>

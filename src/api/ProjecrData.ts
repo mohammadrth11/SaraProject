@@ -11,6 +11,7 @@ export const ProjectData = [
     MepContractor: "xtemos.com/wood",
     SystemProvider: "xxxxx",
     ProjectStatus: "Complete",
+    category: "Trading",
   },
   {
     id: 2,
@@ -24,6 +25,7 @@ export const ProjectData = [
     MepContractor: "xtemos.com/wood",
     SystemProvider: "xxxxx",
     ProjectStatus: "Complete",
+    category: "Trading",
   },
   {
     id: 3,
@@ -37,6 +39,7 @@ export const ProjectData = [
     MepContractor: "xtemos.com/wood",
     SystemProvider: "xxxxx",
     ProjectStatus: "Complete",
+    category: "Trading",
   },
   {
     id: 4,
@@ -50,6 +53,7 @@ export const ProjectData = [
     MepContractor: "xtemos.com/wood",
     SystemProvider: "xxxxx",
     ProjectStatus: "Complete",
+    category: "Switchgear",
   },
   {
     id: 5,
@@ -63,6 +67,7 @@ export const ProjectData = [
     MepContractor: "xtemos.com/wood",
     SystemProvider: "xxxxx",
     ProjectStatus: "Complete",
+    category: "Switchgear",
   },
   {
     id: 6,
@@ -76,6 +81,7 @@ export const ProjectData = [
     MepContractor: "xtemos.com/wood",
     SystemProvider: "xxxxx",
     ProjectStatus: "Complete",
+    category: "Building Automation",
   },
   {
     id: 7,
@@ -89,6 +95,7 @@ export const ProjectData = [
     MepContractor: "xtemos.com/wood",
     SystemProvider: "xxxxx",
     ProjectStatus: "Complete",
+    category: "Energy",
   },
   {
     id: 8,
@@ -102,6 +109,7 @@ export const ProjectData = [
     MepContractor: "xtemos.com/wood",
     SystemProvider: "xxxxx",
     ProjectStatus: "Complete",
+    category: "Energy",
   },
   {
     id: 9,
@@ -115,5 +123,6 @@ export const ProjectData = [
     MepContractor: "xtemos.com/wood",
     SystemProvider: "xxxxx",
     ProjectStatus: "Complete",
+    category: "Energy",
   },
 ];

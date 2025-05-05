@@ -1,23 +1,23 @@
 type InfoSectionProps = {
   title: string;
-  description1?: string;
-  description2?: string;
-  description3?: string;
-  description4?: string;
-  description5?: string;
-  description6?: string;
+  firstPara?: string;
+  secondPara?: string;
+  thirdPara?: string;
+  fourthPara?: string;
+  fifthPara?: string;
+  sixPara?: string;
   image?: string;
   direction?: "ltr" | "rtl";
 };
 
 export default function InfoSection({
   title,
-  description1,
-  description2,
-  description3,
-  description4,
-  description5,
-  description6,
+  firstPara,
+  secondPara,
+  thirdPara,
+  fourthPara,
+  fifthPara,
+  sixPara,
   image,
   direction = "rtl",
 }: InfoSectionProps) {
@@ -25,7 +25,8 @@ export default function InfoSection({
 
   return (
     <div
-      className={`container flex  items-center justify-center flex-col md:flex-row  gap-x-20 gap-y-5 pb-5  bg-[url('/Vector.jpg')] bg-cover bg-center relative ${
+      data-aos="fade-up"
+      className={` container flex  items-center justify-center flex-col md:flex-row  gap-x-20 gap-y-5 pb-5  bg-[url('/Vector.jpg')] bg-cover bg-center relative ${
         isRtl ? "md:flex-row-reverse " : "mt-55 md:mt-0 "
       }`}
     >
@@ -34,12 +35,12 @@ export default function InfoSection({
       </div>
       <div className={` w-full md:w-1/2`}>
         <h2 className="text-4xl font-bold pb-6">{title}</h2>
-        <p className="pb-5">{description1}</p>
-        <p className=" pb-5">{description2}</p>
-        <p className=" pb-5">{description3}</p>
-        <p className=" pb-5">{description4}</p>
-        <p className=" pb-5">{description5}</p>
-        <p className=" ">{description6}</p>
+        <p className="pb-5">{firstPara}</p>
+        <p className=" pb-5">{secondPara}</p>
+        <p className=" pb-5">{thirdPara}</p>
+        <p className=" pb-5">{fourthPara}</p>
+        <p className=" pb-5">{fifthPara}</p>
+        <p className=" ">{sixPara}</p>
       </div>
     </div>
   );
